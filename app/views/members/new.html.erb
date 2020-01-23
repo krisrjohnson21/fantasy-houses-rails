@@ -1,11 +1,13 @@
-<h1>New House <%= @house.name %> Member Form</h1>
+<h1 class="text-center">New House <%= @house.name %> Member Form</h1>
 
-<%= form_for [@house, @member] do |f| %>
-  <%= f.label :first_name, "First Name" %>
-  <%= f.text_field :first_name %>
+<div class="form">
+  <%= form_for [@house, @member] do |f| %>
+    <%= f.label :first_name, "First Name" %>
+    <%= f.text_field :first_name %>
 
-  <%= f.label :last_name, "Last Name" %>
-  <%= f.text_field :last_name %>
+    <%= f.label :last_name, "Last Name" %>
+    <%= f.text_field :last_name %>
 
-  <%= f.submit value="Add Member" %>
-<% end %>
+    <%= f.submit value="Add Member" %>
+  <% end %>
+</div>

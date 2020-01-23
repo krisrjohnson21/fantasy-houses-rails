@@ -1,6 +1,7 @@
-<h1>New House Form</h1>
+<h1 class="text-center">New House Form</h1>
 
-<%= form_for(@house) do |f| %>
+<div class="form">  
+  <%= form_for(@house) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
 
@@ -14,4 +15,5 @@
   <%= f.text_field :motto %>
 
   <%= f.submit value="Add House" %>
-<% end %>
+  <% end %>
+</div>

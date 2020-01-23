@@ -1,8 +1,10 @@
-<h1>Show Page for <%= @house.name %> </h1>
+<h1>Show Page for House <%= @house.name %> </h1>
 
-<h4> <%= @house.source %> </h4>
-<h4> <%= @house.author %> </h4>
-<h4> <%= @house.motto %> </h4>
+<h4> This house exists in the universe of <%= @house.source %> </h4>
+<h4> The creator of this house is <%= @house.author %> </h4>
+<h4> The motto of this house is "<em><%= @house.motto %></em>" </h4>
+
+<hr />
 
 <h3> <%= @house.name %> Members </h3>
 <ul>
@@ -13,6 +15,7 @@
     </li>
   <% end %>
 </ul>
+<hr />
 
 <%= link_to "Add New House", new_house_path, class: "button" %>
 <%= link_to "Add a House Member", new_house_member_path(@house), class: "button" %>
