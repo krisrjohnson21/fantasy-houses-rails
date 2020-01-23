@@ -11,11 +11,12 @@
   <% @members.each do |member| %>
     <li>
       <%= "#{member.first_name} #{member.last_name}" %>
-      <%= member.created_at.strftime("%B %d %Y") %>
+      <em class="added">Added on <%= member.created_at.strftime("%B %d %Y") %></em>
     </li>
   <% end %>
 </ul>
 <hr />
 
-<%= link_to "Add New House", new_house_path, class: "button" %>
 <%= link_to "Add a House Member", new_house_member_path(@house), class: "button" %>
+<%= link_to "Edit This House", edit_house_path(@house), class: "button" %>
+<%= link_to "Back to All Houses", houses_path, class: "button" %>
