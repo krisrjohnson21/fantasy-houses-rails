@@ -1,6 +1,6 @@
 class HousesController < ApplicationController
   def index
-    @houses = House.all
+    @houses = House.order("name")
   end
 
   def show
@@ -39,6 +39,14 @@ class HousesController < ApplicationController
       flash.now[:error] = @house.errors.full_messages.to_sentence
       render :edit
     end
+  end
+
+  def destroy
+    @house = House.find(params["id"])
+    @house.members.destroy
+    @house.destroy
+    flash[:notice] = "House deleted successfully"
+    redirect_to houses_path
   end
 
   private
